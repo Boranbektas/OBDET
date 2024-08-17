@@ -8,23 +8,25 @@
 
 		<!-- Banner -->
 			<section id="banner"><h2><strong>OBDET</strong> <br>Computer Vision Prediction Website</h2>
-				<ul class="actions"><li><a href="" class="button special">Get started</a></li>
 				</ul></section><!-- One --><section id="one" class="wrapper special"><div class="inner">
 					<header class="major"><h2>Supported Models and Architectures</h2>
 					</header><div class="features">
 						<div class="feature">
 							<i class="fa fa-diamond"></i>
 							<h3>YOLO</h3>
-							<p>A state of art <strong>Object Detection</strong> architecture</p>
+							<p>A state of art <strong>Object Detection</strong> algorithm</p>
 						</div>
 					</div>
 				</div>
 			</section><!-- Two --><section id="two" class="wrapper style2 special"><div class="inner narrow">
 					<header><h2>Upload an Image</h2>
-					</header><form class="grid-form" method="post" enctype="multipart/form-data" action="#">
+						{% if error %}
+							<p>{{ error }}</p>
+						{% endif %}
+					</header><form class="grid-form" method="post" enctype="multipart/form-data">
 						<div class="form-control">
-							<label for="image">Image</label>
-							<input name="image" id="image" accept="image/*" type="file"></div>
+							<label for="file">Image</label>
+							<input name="file" id="file" accept="image/*" type="file"></div>
 						<ul class="actions"><li><input value="Predict" type="submit"></li>
 						</ul></form>
 				</div>

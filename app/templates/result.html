@@ -1,10 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Prediction Result</title>
-</head>
-<body>
 
-</body>
-</html>
+<!DOCTYPE HTML>
+<!--
+	Typify by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+--><html><head><title>OBDET</title><meta charset="utf-8"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="viewport" content="width=device-width, initial-scale=1"><!--[if lte IE 8]><script src="../static/assets/js/ie/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="../static/assets/css/main.css"><!--[if lte IE 9]><link rel="stylesheet" href="../static/assets/css/ie9.css" /><![endif]-->
+	<style>
+		.image-container {
+			display:flex;
+			margin-top:20px;
+		}
+		.image-container img {
+			max-width:50%;
+		}
+	</style>
+</head><body>
+
+		<!-- Banner -->
+			<section id="banner"><h2><strong>Results</strong></h2></section>
+		<!-- One --><section id="one" class="wrapper special"><div class="inner">
+					<header class="major"><h2>Original Image  || Detected Image</h2>
+					</header><div class="features">
+						<div class="feature">
+							<h3>Original Image</h3>
+							 <img src="data:image/png;base64,{{ original_img_data }}" alt="Original Image">
+						</div>
+						<div class="feature">
+							<h3>Deteceted Image</h3>
+							<img src="data:image/png;base64, {{ detection_img_data }}" alt="Detection Image">
+					</div>
+				</div>
+			</section>
+        <!-- Scripts --><script src="../static/assets/js/jquery.min.js"></script><script src="../static/assets/js/skel.min.js"></script><script src="../static/assets/js/util.js"></script><!--[if lte IE 8]><script src="../static/assets/js/ie/respond.min.js"></script><![endif]--><script src="../static/assets/js/main.js"></script></body></html>
