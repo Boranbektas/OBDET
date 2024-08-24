@@ -1,7 +1,11 @@
 import base64
+import os.path
 
 import cv2
 from flask import render_template, Blueprint, request, redirect, url_for
+from werkzeug.utils import secure_filename
+
+from app import app
 from app.controllers import allowed_file, predict_on_image
 from ultralytics import YOLO
 
@@ -19,7 +23,12 @@ def Index():
         if file == '':
             return render_template("home.html", error="No selected file")
         if file and allowed_file(file.filename):
-            predicted_image = predict_on_image(file.stream)
+
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.UPLOAD_FOLDER,filename))
+
+
+            predicted_image = predict_on_image(filename)
 
             retval, buffer = cv2.imencode('.png', predicted_image)
             detection_img_base64 = base64.b64encode(buffer).decode('utf-8')
